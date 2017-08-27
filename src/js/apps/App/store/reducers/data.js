@@ -16,7 +16,7 @@ const initialState = []
 export default (state = initialState, { type, payload }) => {
     switch (type) {
         case SET_DATA:
-            return payload || state
+            return [ ...payload ] || state
         default:
             return state
     }

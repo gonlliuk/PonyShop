@@ -6,7 +6,6 @@ export default class extends Component {
     constructor(props) {
         super(props)
         this.pageLimit = 20
-        this.totalPages = Math.ceil(props.data.length / this.pageLimit)
     }
     getProductCardList() {
         const {
@@ -51,7 +50,9 @@ export default class extends Component {
         const {
             toggleFilter,
             page,
+            data,
         } = this.props
+        const totalPages = Math.ceil(data.length / this.pageLimit)
         return <div className="page">
             <div className="page__filter-buttons">
                 <button className="button" onClick={toggleFilter}>Настроить фильтры</button>
@@ -65,7 +66,7 @@ export default class extends Component {
                     prevPage={::this.prevPage}
                     nextPage={::this.nextPage}
                     current={page}
-                    total={this.totalPages}/>
+                    total={totalPages}/>
             </div>
         </div>
     }

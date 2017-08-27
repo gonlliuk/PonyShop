@@ -6,7 +6,6 @@ export default class extends Component {
     render() {
         const { history, match: { params: { page } } } = this.props
         return <div>
-            <h1>Pony Shop</h1>
             <MainContainer page={page} history={history}/>
         </div>
     }

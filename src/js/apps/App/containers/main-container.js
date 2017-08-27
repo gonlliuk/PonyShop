@@ -29,17 +29,28 @@ export default class extends Component {
             isFilterVisible: false,
         }
     }
+
     toggleFilter() {
         const { isFilterVisible } = this.state
         this.setState({ isFilterVisible: !isFilterVisible })
+    }
+
+    setFilter(filter) {
+        this.props.setFilterAction(filter)
+        this.toggleFilter()
+        this.props.history.push(`/1`)
+    }
+
+    resetFilter() {
+        this.props.resetFilterAction()
+        this.toggleFilter()
+        this.props.history.push(`/1`)
     }
 
     render() {
         const {
             data,
             filter,
-            setFilterAction,
-            resetFilterAction,
             page,
             history,
         } = this.props
@@ -47,7 +58,7 @@ export default class extends Component {
         return <div>
             <div hidden={!isFilterVisible}>
                 <Overlay>
-                    <Filter filter={filter} set={setFilterAction} reset={resetFilterAction}/>
+                    <Filter filter={filter} set={::this.setFilter} reset={::this.resetFilter}/>
                 </Overlay>
             </div>
             <Page

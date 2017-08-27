@@ -3,6 +3,7 @@ import { routerReducer, routerMiddleware, syncHistoryWithStore } from 'react-rou
 import { createBrowserHistory }  from 'history'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
+import initialState from './initial-state'
 import * as reducers from './reducers'
 
 const rootReducer = combineReducers({
@@ -17,11 +18,6 @@ const middlewares = [
     thunk,
     routerMiddleware(browserHistory)
 ]
-
-const initialState = {
-    user: {},
-    todoList: []
-}
 
 const store = createStore(rootReducer, initialState, applyMiddleware(...middlewares))
 

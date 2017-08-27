@@ -4,10 +4,10 @@ import MainContainer from '../../containers/main-container'
 export default class extends Component {
 
     render() {
-        const { match: { params: { page } } } = this.props
+        const { history, match: { params: { page } } } = this.props
         return <div>
             <h1>Pony Shop</h1>
-            <MainContainer page={page}/>
+            <MainContainer page={page} history={history}/>
         </div>
     }
 }

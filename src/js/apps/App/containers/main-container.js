@@ -41,6 +41,7 @@ export default class extends Component {
             setFilterAction,
             resetFilterAction,
             page,
+            history,
         } = this.props
         const { isFilterVisible } = this.state
         return <div>
@@ -53,7 +54,8 @@ export default class extends Component {
                 data={data}
                 toggleFilter={::this.toggleFilter}
                 resetFilter={resetFilterAction}
-                page={page}/>
+                history={history}
+                page={+page}/>
         </div>
     }
 }

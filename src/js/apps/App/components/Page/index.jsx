@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Paginator from '../Paginator'
 import ProductCard from '../ProductCard'
+import './index.styl'
 
 export default class extends Component {
     constructor(props) {

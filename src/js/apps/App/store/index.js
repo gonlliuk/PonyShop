@@ -1,23 +1,21 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
-import { routerReducer, routerMiddleware, syncHistoryWithStore } from 'react-router-redux'
-import { createBrowserHistory }  from 'history'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 import initialState from './initial-state'
 import * as reducers from './reducers'
+import config from 'build/config'
 
 const rootReducer = combineReducers({
     ...reducers,
-    routing: routerReducer
 })
 
-const browserHistory = createBrowserHistory()
-
 const middlewares = [
-    logger(),
     thunk,
-    routerMiddleware(browserHistory)
 ]
+
+if (config.debug) {
+    middlewares.push(logger())
+}
 
 const store = createStore(rootReducer, initialState, applyMiddleware(...middlewares))
 
@@ -26,12 +24,9 @@ if (module.hot) {
         const reducers = require('./reducers/')
         const nextRootReducer = combineReducers({
             ...reducers,
-            routing: routerReducer
         })
         store.replaceReducer(nextRootReducer)
     })
 }
-
-export const history = syncHistoryWithStore(browserHistory, store)
 
 export default store

@@ -6,7 +6,7 @@ if [ -z "$1" ]; then
 fi
 
 if [ $1 == 'dev' ]; then
-    export NODE_ENV=develop
+    export NODE_ENV=development
     export NODE_WATCH=true
     npm run dev
 elif [ $1 == 'test' ]; then

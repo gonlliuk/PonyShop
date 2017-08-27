@@ -1,7 +1,7 @@
 const path = require('path')
 
 /** application environments */
-const debug = process.env.NODE_ENV !== 'production'
+const debug = process.env.NODE_ENV === 'development'
 const test = process.env.NODE_ENV === 'test'
 const watch = process.env.NODE_WATCH === 'true'
 

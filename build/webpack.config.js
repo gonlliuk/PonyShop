@@ -16,6 +16,7 @@ const options = {
         extensions: ['.js', '.jsx', '.styl'],
         alias: {
             data: resolve('src/js/data/'),
+            build: resolve('build'),
         }
     },
     module: {
@@ -53,7 +54,8 @@ const options = {
     ]
 }
 
-module.exports = test ?
-    merge(options, require('./webpack.test')) : debug ?
-        merge(options, require('./webpack.dev')) :
-        merge(options, require('./webpack.dist'))
+module.exports = test
+    ? merge(options, require('./webpack.test'))
+    : debug
+        ? merge(options, require('./webpack.dev'))
+        : merge(options, require('./webpack.dist'))

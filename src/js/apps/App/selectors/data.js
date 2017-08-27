@@ -29,8 +29,9 @@ export const dataSelector = createSelector([
 ], (filter, data, isFiltered) => {
     if (!isFiltered) return data
     return data
-        .filter(item => filter.color === item.color)
-        .filter(item => filter.kind.some(elem => elem === item.kind))
-        .filter(item => filter.price.start <= item.price <= filter.price.end)
-        .filter(item => filter.isNew === item.isNew)
+        .filter(item => filter.color ? filter.color === item.color : true)
+        .filter(item => filter.kind.length ? filter.kind.some(elem => elem === item.kind) : true)
+        .filter(item => filter.price.start ? filter.price.start <= item.price : true)
+        .filter(item => filter.price.end ? item.price <= filter.price.end : true)
+        .filter(item => typeof filter.isNew === 'boolean' ? filter.isNew === item.isNew : true)
 })

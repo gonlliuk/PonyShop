@@ -1,20 +1,9 @@
+import data from '../data/filter-data'
 export default () => {
-    const colorList = [
-        'Красный',
-        'Оранжевый',
-        'Желтый',
-        'Зеленый',
-        'Голубой',
-        'Синий',
-        'Фиолетовый',
-    ]
-
-    const kindList = [
-        'Земной пони',
-        'Единорог',
-        'Пегас',
-        'Аликорн',
-    ]
+    const {
+        colorList,
+        kindList,
+    } = data
 
     const generateRandomNumber = (min, max) => Math.round(Math.random() * (max - min) + min)
 

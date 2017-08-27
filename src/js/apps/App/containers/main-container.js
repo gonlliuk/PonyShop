@@ -40,13 +40,20 @@ export default class extends Component {
             filter,
             setFilterAction,
             resetFilterAction,
+            page,
         } = this.props
         const { isFilterVisible } = this.state
         return <div>
-            <Overlay hidden={isFilterVisible}>
-                <Filter filter={filter} set={setFilterAction} reset={resetFilterAction}/>
-            </Overlay>
-            <Page data={data} toggleFilter={::this.toggleFilter} resetFilter={resetFilterAction}/>
+            <div hidden={!isFilterVisible}>
+                <Overlay>
+                    <Filter filter={filter} set={setFilterAction} reset={resetFilterAction}/>
+                </Overlay>
+            </div>
+            <Page
+                data={data}
+                toggleFilter={::this.toggleFilter}
+                resetFilter={resetFilterAction}
+                page={page}/>
         </div>
     }
 }

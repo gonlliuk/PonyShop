@@ -2,14 +2,12 @@ import React, { Component } from 'react'
 import MainContainer from '../../containers/main-container'
 
 export default class extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
+        const { match: { params: { page } } } = this.props
         return <div>
             <h1>Pony Shop</h1>
-            <MainContainer/>
+            <MainContainer page={page}/>
         </div>
     }
 }

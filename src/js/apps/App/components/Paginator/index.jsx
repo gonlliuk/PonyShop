@@ -16,7 +16,7 @@ export default class extends Component {
             const currentPageClass = item === current ? 'paginator__page--current' : ''
             return <button
                 key={item}
-                className={`paginator__page button ${currentPageClass}`}
+                className={`button paginator__page ${currentPageClass}`}
                 onClick={() => setPage(item)}>{item}</button>
         })
 
@@ -30,14 +30,14 @@ export default class extends Component {
         } = this.props
         return <div className="paginator">
             <button
-                className="paginator__prev button"
+                className="button paginator__prev"
                 hidden={current === 1}
                 onClick={prevPage}>Предудущая</button>
             <div className="paginator__pages">
                 {::this.getPageButtons()}
             </div>
             <button
-                className="paginator__next button"
+                className="button paginator__next"
                 hidden={current === total}
                 onClick={nextPage}>Следующая</button>
         </div>

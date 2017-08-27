@@ -14,6 +14,9 @@ const options = {
     resolve: {
         modules: ['node_modules', 'src'],
         extensions: ['.js', '.jsx', '.styl'],
+        alias: {
+            data: resolve('src/js/data/'),
+        }
     },
     module: {
         rules: [{

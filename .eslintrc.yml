@@ -1,0 +1,56 @@
+---
+parser: babel-eslint
+
+plugins:
+  - import
+  - react
+  # - jsx-a11y
+
+env:
+  node: true,
+  browser: true,
+  es6: true
+
+rules:
+  indent:
+    - 2
+    - 4
+    - SwitchCase: 1
+  semi:
+    - 2
+    - never
+  space-before-function-paren:
+    - 2
+    - never
+  keyword-spacing:
+    - 2
+  camelcase:
+    - 2
+    - properties: never
+  no-console:
+    - 1
+  no-constant-condition:
+    - 2
+  no-dupe-keys:
+    - 2
+  no-empty:
+    - 2
+  no-func-assign:
+    - 2
+  import/no-duplicates:
+    - 2
+
+parserOptions:
+  ecmaVersion: 8
+  sourceType: module
+  
+  ecmaFeatures:
+    jsx: true
+    experimentalObjectRestSpread: true
+
+settings:
+  import/resolver:
+    node:
+      moduleDirectory:
+      - node_modules
+      - src

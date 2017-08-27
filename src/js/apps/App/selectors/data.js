@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect'
+import initialState from '../store/initial-state'
 
 /**
  * Get filter from redux state
@@ -12,13 +13,21 @@ const filter = ({ filter }) => filter
  */
 const data = ({ data }) => data
 
+export const isFiltered = createSelector([
+    filter,
+], (filter) => {
+    return filter !== initialState.filter
+})
+
 /**
  * Data selector by filter
  */
 export const dataSelector = createSelector([
     filter,
     data,
-], (filter, data) => {
+    isFiltered,
+], (filter, data, isFiltered) => {
+    if (!isFiltered) return data
     return data
         .filter(item => filter.color === item.color)
         .filter(item => filter.kind.some(elem => elem === item.kind))

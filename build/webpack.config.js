@@ -15,7 +15,6 @@ const options = {
         modules: ['node_modules', 'src'],
         extensions: ['.js', '.jsx', '.styl'],
         alias: {
-            service: resolve('src/js/service/'),
             libs: resolve('src/js/libs/'),
             apps: resolve('src/js/apps/'),
             components: resolve('src/js/components/'),

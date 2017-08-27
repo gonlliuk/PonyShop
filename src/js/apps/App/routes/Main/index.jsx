@@ -6,7 +6,6 @@ export default class extends Component {
     }
 
     render() {
-        console.log(this.props.match.params.page)
         return <div>
             <h1>Pony Shop</h1>
         </div>

@@ -6,8 +6,16 @@ import {
     Main,
 } from './routes'
 import store from './store'
+import { SET_DATA } from './store/constants'
 
 export default class extends Component {
+    constructor(props) {
+        super(props)
+        store.dispatch({
+            type: SET_DATA,
+            payload: props.data,
+        })
+    }
     render() {
         return <Provider store={store}>
             <Router history={createBrowserHistory()}>

@@ -1,0 +1,53 @@
+.filter
+	position relative
+	top 100px
+	width 400px
+	margin 0 auto
+	background-color #fff
+	padding 20px 0
+
+	&__title
+		text-align center
+		font-size 20px
+		margin-bottom 20px
+
+	&__buttons
+		text-align center
+
+	&__find
+		margin-right 15px
+
+	&__list
+		max-height 300px
+		overflow hidden
+		overflow-y auto
+		margin-bottom 20px
+
+	&__item
+		border 1px solid #d0d0d0
+		padding 10px 60px
+		border-left none
+		border-right none
+		border-bottom none
+		cursor pointer
+
+		&:last-child
+			border-bottom  1px solid #d0d0d0
+
+		&-options
+			margin-top 10px
+			transition height .5 ease 0
+
+	&__checkbox-label
+		margin-left 10px
+	&__input
+		box-sizing border-box
+		border 1px solid  #d0d0d0
+		height 30px
+		width 60px
+		padding 0 6px
+		margin-right 10px
+		outline none
+
+	&__price
+		margin-right 10px

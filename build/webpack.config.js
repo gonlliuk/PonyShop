@@ -14,12 +14,6 @@ const options = {
     resolve: {
         modules: ['node_modules', 'src'],
         extensions: ['.js', '.jsx', '.styl'],
-        alias: {
-            libs: resolve('src/js/libs/'),
-            apps: resolve('src/js/apps/'),
-            components: resolve('src/js/components/'),
-            stylus: resolve('src/stylus/')
-        }
     },
     module: {
         rules: [{

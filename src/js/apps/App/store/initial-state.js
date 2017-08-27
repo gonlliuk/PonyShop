@@ -3,8 +3,8 @@ export default {
         color: '',
         kind: [],
         price: {
-            start: 0,
-            end: 999999,
+            start: '',
+            end: '',
         },
         isNew: null,
     },

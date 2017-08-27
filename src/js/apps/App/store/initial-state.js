@@ -1,6 +1,6 @@
 export default {
     filter: {
-        color: [],
+        color: '',
         kind: [],
         price: {
             start: 0,

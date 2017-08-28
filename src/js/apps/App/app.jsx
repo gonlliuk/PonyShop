@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { Router, Route, Redirect, Switch } from 'react-router'
 import { createBrowserHistory }  from 'history'
-import {
-    Main,
-} from './routes'
+import { Main } from './routes'
 import store from './store'
 import { SET_DATA } from './store/constants'
 

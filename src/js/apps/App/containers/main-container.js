@@ -30,17 +30,27 @@ export default class extends Component {
         }
     }
 
+    /**
+     * Toggle filter handler
+     */
     toggleFilter() {
         const { isFilterVisible } = this.state
         this.setState({ isFilterVisible: !isFilterVisible })
     }
 
+    /**
+     * Apply new filter and hide overlay
+     * @param {Object} filter
+     */
     setFilter(filter) {
         this.props.setFilterAction(filter)
         this.toggleFilter()
         this.props.history.push(`/1`)
     }
 
+    /**
+     * Reset filter to default and hide overlay
+     */
     resetFilter() {
         this.props.resetFilterAction()
         this.toggleFilter()
@@ -58,7 +68,10 @@ export default class extends Component {
         return <div>
             <div hidden={!isFilterVisible}>
                 <Overlay>
-                    <Filter filter={filter} set={::this.setFilter} reset={::this.resetFilter}/>
+                    <Filter
+                        filter={filter}
+                        set={::this.setFilter}
+                        reset={::this.resetFilter}/>
                 </Overlay>
             </div>
             <Page

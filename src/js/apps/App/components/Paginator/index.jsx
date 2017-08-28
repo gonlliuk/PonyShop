@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
 export default class extends Component {
+
+    /**
+     * Get page nums elements
+     * @returns {Array}
+     */
     getPageButtons() {
         const {
             current,

@@ -13,9 +13,9 @@ const { filter } = initialState
 
 /**
  * Filter reducer
- * @param state - current state of filter
- * @param type - action type
- * @param payload - action payload
+ * @param {Object}state - current state of filter
+ * @param {String} type - action type
+ * @param {Object} payload - action payload
  * @returns {Object}
  */
 export default (state = filter, { type, payload }) => {

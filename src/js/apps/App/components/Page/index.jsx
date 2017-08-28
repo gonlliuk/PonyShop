@@ -7,6 +7,11 @@ export default class extends Component {
         super(props)
         this.pageLimit = 20
     }
+
+    /**
+     * Get product cards components for current page
+     * @returns {Array}
+     */
     getProductCardList() {
         const {
             page,
@@ -23,6 +28,9 @@ export default class extends Component {
             .slice(startPos, endPos)
     }
 
+    /**
+     * Next page handler
+     */
     nextPage() {
         const {
             history,
@@ -31,6 +39,9 @@ export default class extends Component {
         history.push(`/${page + 1}`)
     }
 
+    /**
+     * Prev page handler
+     */
     prevPage() {
         const {
             history,
@@ -39,6 +50,9 @@ export default class extends Component {
         history.push(`/${page - 1}`)
     }
 
+    /**
+     * Set special page handler
+     */
     setPage(page) {
         const {
             history,

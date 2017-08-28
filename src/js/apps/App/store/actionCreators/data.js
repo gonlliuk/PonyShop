@@ -1,7 +1,7 @@
 import { setData } from '../actions/data'
 
 /**
- * Set data action
+ * Set data action creator
  * @param {Array} data
  * @returns {function(*)}
  */

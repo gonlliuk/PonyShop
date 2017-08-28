@@ -11,10 +11,16 @@ export default class extends Component {
             isOldCheck: false,
         }
     }
+
     componentWillReceiveProps(props) {
         this.setState({ ...props.filter })
     }
 
+    /**
+     * Get 'kind' filter elements
+     * @param {Array} list
+     * @returns {Array}
+     */
     mapKindCheckBoxes(list) {
         const {
             kind,
@@ -32,6 +38,11 @@ export default class extends Component {
         })
     }
 
+    /**
+     * Get 'color' filter elements
+     * @param {Array} list
+     * @returns {Array}
+     */
     mapColorCheckBoxes(list) {
         const {
             color,
@@ -49,11 +60,19 @@ export default class extends Component {
         })
     }
 
+    /**
+     * Color checkbox onchange handler
+     * @param {String} name
+     */
     colorCheckboxHandler(name) {
         const { checked } = this.refs[name]
         this.setState({ color:  checked ? name : '' })
     }
 
+    /**
+     * Kind checkbox onchange handler
+     * @param {String} name
+     */
     kindCheckboxHandler(name) {
         const { checked } = this.refs[name]
         const { kind } = this.state
@@ -65,6 +84,10 @@ export default class extends Component {
         this.setState({ kind: kind.concat(name) })
     }
 
+    /**
+     * isNew & isOld checkbox onchange handler
+     * @param {String} name
+     */
     isNewCheckboxHandler(name) {
         const { checked } = this.refs[name]
         this.setState({ [name]: checked })
@@ -81,6 +104,10 @@ export default class extends Component {
         }, 10)
     }
 
+    /**
+     * Price input onchange handler
+     * @param {String} name
+     */
     inputChangeHandler(name) {
         const { value } = this.refs[name]
         const { price } = this.state

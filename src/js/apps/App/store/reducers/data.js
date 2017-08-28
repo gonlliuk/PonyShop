@@ -9,9 +9,9 @@ const { data } = initialState
 
 /**
  * Data reducer
- * @param state - current state of data
- * @param type - action type
- * @param payload - action payload
+ * @param {Array} state - current state of data
+ * @param {String} type - action type
+ * @param {Array} payload - action payload
  * @returns {Array}
  */
 export default (state = data, { type, payload }) => {

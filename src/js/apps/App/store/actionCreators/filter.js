@@ -4,7 +4,7 @@ import {
 } from '../actions/filter'
 
 /**
- * Set filter action
+ * Set filter action creator
  * @param {Object} data
  * @returns {function(*)}
  */
@@ -13,7 +13,7 @@ export function setFilterAction(data) {
 }
 
 /**
- * Reset filter action
+ * Reset filter action creator
  * @returns {function(*)}
  */
 export function resetFilterAction() {
